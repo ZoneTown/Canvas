@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas Project</title>
+</head>
+<body>
+    <script>
+        window.onload=function(){
+            var canvas=document.getElementById("myCanvas");
+            var context=canvas.getContext("2d");
+            context.lineWidth=15;
+            context.strokeStyle="#FBCC6B"; // Line color
+
+            // Main Circle
+            context.beginPath();
+            context.arc(350, 335, 300, 0, 2 * Math.PI);
+            context.stroke();
+            context.fillStyle="#FBCC6B"; // Fill Color
+            context.fill(); 
+
+            // Left Eye
+            context.beginPath();
+            context.lineWidth=12;
+            context.arc(220, 230, 80, 0, 2 * Math.PI);
+            context.fillStyle="#0000FF";
+            context.fill();
+
+            // Left Eye Detail Shadow
+            context.beginPath();
+            context.lineWidth=12;
+            context.arc(198, 214, 25, 0, 2 * Math.PI);
+            context.fillStyle="#B5B5B5";
+            context.fill();
+
+            // Left Eye Detail
+            context.beginPath();
+            context.lineWidth=12;
+            context.arc(195, 210, 25, 0, 2 * Math.PI);
+            context.fillStyle="#FFFFFF";
+            context.fill();
+
+            // Right Eye
+            context.beginPath();
+            context.lineWidth=12;
+            context.arc(485, 230, 80, 0, 2 * Math.PI);
+            context.fillStyle="#FF0000";
+            context.fill();
+
+            // Right Eye Detail Shadow
+            context.beginPath();
+            context.lineWidth=12;
+            context.arc(468, 214, 25, 0, 2 * Math.PI);
+            context.fillStyle="#B5B5B5";
+            context.fill();
+
+            // Right Eye Detail
+            context.beginPath();
+            context.lineWidth=12;
+            context.arc(465, 210, 25, 0, 2 * Math.PI);
+            context.fillStyle="#FFFFFF";
+            context.fill();
+            
+            // Nose
+            context.fillStyle="#000000";
+            context.fillRect(333,315,45,150);
+
+            // Mouth Upper
+            context.fillStyle="#000000";
+            context.fillRect(282,500,150,80)
+
+            // Mouth Lower
+            context.beginPath();
+            context.moveTo(285, 575);
+            context.quadraticCurveTo(350, 600, 430, 576);
+            context.strokeStyle="#000000";
+            context.stroke();
+            context.fillRect(305,502,100,80)
+        };
+    </script>
+
+    <canvas id="myCanvas" width="700" height="665" style="border:1px solid black;"></canvas>
+</body>
+</html>
